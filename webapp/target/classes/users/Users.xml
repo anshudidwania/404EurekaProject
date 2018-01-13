@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <user id="123">
+   <memberId>123</memberId>
+        <fname>Doe</fname>
+        <lname>26</lname>
+  <salutation>Mr</salutation>
+  <email>abc@xyz.com</email>
+  <city>Pune</city>
+  <province>Maharashtra</province>
+  <locality>Baner</locality>
+  <countryCode>91</countryCode>
+  <address>Baner, Pune</address>
+  <phoneNo>022-74589685</phoneNo>
+  <countyDialerCode>91</countyDialerCode>
+  <postalCode>411045</postalCode>
+  <mobileNumber>Pune</mobileNumber>
+  <dob>23-12-1990</dob>
+  <gender>Male</gender>
+  <isValidated>Y</isValidated>
+  <creationDate>23-12-2017</creationDate>
+  <updationDate>30-12-2017</updationDate>
+  <password>hd783c745c94c5u</password>
+ </user>
+
+</users>

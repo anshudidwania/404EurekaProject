@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+    <groupId>com.hackathon.eureka</groupId>
+    <artifactId>404EurekaProject</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+	<artifactId>404eureka-web-app</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>404eureka-web-app</name>
+	<description>404eureka-web-app</description>
+
+	<!-- PROPERTIES FOR PROFILE MANAGEMENT -->
+	<properties>
+		<project.build.output.webinf.dir>${project.build.directory}/${project.artifactId}-${project.version}/WEB-INF</project.build.output.webinf.dir>
+		<war.package.dir>${basedir}/target/dist</war.package.dir>
+		<war.name>404eureka</war.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.hackathon.eureka.core</groupId>
+			<artifactId>eureka</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+	<!-- PROFILES TO CARRY OUT INDIVIDUALS TASKS WHICH ARE NOT DEPENDENT ON 
+		COMPLETE MAVEN LIFE CYCLE AND CAN BE RUN INDEPENDENTLY. COMMAND FOR RUNNING 
+		A SINGLE PROFILE AT A TIME : [mvn -P <profileid> goals]. COMMAND FOR RUNNING 
+		MULTIPLE PROFILES AT A TIME : [mvn -P <profileid1>,<profileid2>,....,<profileidN> 
+		goals] -->
+	<profiles>
+
+
+		<!-- Profile is used for DEV environment -->
+		<profile>
+			<id>env-dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.4</version>
+						<executions>
+							<execution>
+								<id>default-war</id>
+								<phase>package</phase>
+								<goals>
+									<goal>war</goal>
+								</goals>
+								<configuration>
+									<webResources>
+										
+										<resource>
+											<directory>src/main/webapp/WEB-INF</directory>
+											<targetPath>WEB-INF</targetPath>
+											<filtering>true</filtering>
+										</resource>
+									</webResources>
+									<warName>${war.name}</warName>
+									<outputDirectory>${war.package.dir}</outputDirectory>
+
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

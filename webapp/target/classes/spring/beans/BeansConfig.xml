@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+   <!-- LoyCitizenUser business object -->
+   <bean id="loyCitizenUserBo" class="com.hackathon.eureka.loycitizen.loycitizenuser.bo.impl.LoyCitizenUserBoImpl" >
+   		<property name="loyCitizenUserDao" ref="loyCitizenUserDao" />
+   </bean>
+
+   <!-- LoyCitizenUser Data Access Object -->
+   <bean id="loyCitizenUserDao" class="com.hackathon.eureka.loycitizen.loycitizenuser.dao.impl.LoyCitizenUserDaoImpl" >
+   		<property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+   
+   <!-- Feedback business object -->
+   <bean id="feedbackBo" class="com.hackathon.eureka.loycitizen.Feedback.bo.impl.FeedbackBoImpl" >
+   		<property name="feedbackDao" ref="feedbackDao" />
+   </bean>
+
+   <!-- LoyCitizenUser Data Access Object -->
+   <bean id="feedbackDao" class="com.hackathon.eureka.loycitizen.Feedback.dao.impl.FeedbackDaoImpl" >
+   		<property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+</beans>
