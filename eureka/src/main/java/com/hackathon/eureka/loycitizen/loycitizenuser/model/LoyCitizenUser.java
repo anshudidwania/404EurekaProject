@@ -92,13 +92,19 @@ public class LoyCitizenUser {
 	public LoyCitizenUser(LoyCitizenUserVO vo){
 		this.id = vo.getId();
 		this.memberId = vo.getMemberId();
+		this.countryCode = vo.getCountryCode();
+		this.fname = vo.getFname();
+		this.mname = vo.getMname();
 		this.lname = vo.getLname();
 		this.salutation = vo.getSalutation();
 		this.email = vo.getEmail();
 		this.city = vo.getCity();
 		this.province = vo.getProvince();
 		this.locality = vo.getLocality();
+		this.address = vo.getAddress();
 		this.postalCode =vo.getPostalCode();
+		this.phoneNo = vo.getPhoneNo();
+		this.countyDialerCode = vo.getCountyDialerCode();
 		this.mobileNumber = vo.getMobileNumber();
 		this.dob = EurekaUtil.convertStringToDate(vo.getDob());
 		this.gender = vo.getGender();

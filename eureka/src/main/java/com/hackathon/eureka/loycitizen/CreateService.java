@@ -6,12 +6,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.hackathon.eureka.loycitizen.handlers.CreateHandler;
-import com.hackathon.eureka.loycitizen.handlers.ValidateUserHandler;
+import com.hackathon.eureka.loycitizen.handlers.InitiativesHandler;
 import com.hackathon.eureka.loycitizen.vo.CreateRequestVO;
 import com.hackathon.eureka.loycitizen.vo.CreateResponseVO;
-import com.hackathon.eureka.loycitizen.vo.ValidateUserRequest;
-import com.hackathon.eureka.loycitizen.vo.ValidateUserResponse;
 
 @Path("/create")
 public class CreateService {
@@ -20,16 +17,16 @@ public class CreateService {
 	@Produces({MediaType.APPLICATION_JSON}) 
 	@Path("/createEvent")
 	public CreateResponseVO createEvent(CreateRequestVO createRequestVO){
-		CreateHandler  handler = new CreateHandler();
+		InitiativesHandler  handler = new InitiativesHandler();
 		return handler.createEvent(createRequestVO);
 	}
 	
 	@POST
     @Consumes({MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_JSON}) 
-	@Path("/createEvent")
+	@Path("/createPoll")
 	public CreateResponseVO createPoll(CreateRequestVO createRequestVO){
-		CreateHandler  handler = new CreateHandler();
+		InitiativesHandler  handler = new InitiativesHandler();
 		return handler.createPoll(createRequestVO);
 	}
 }
